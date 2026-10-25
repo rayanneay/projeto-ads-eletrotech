@@ -1,14 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eletrotech</title>
-</head>
-<body>
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header.ejs') %>
+
+<!--    
+
+JSONs com para blocos de código que se repetem com o mesmo html
+
+-->
+
+<% const cards = [ // JSON dos cards da seção de serviços e produtos
+    {
+        img: '/img/#',
+        title: 'Soluções Elétricas',
+        text: 'Materiais e soluções para instalações e painéis elétricos, com qualidade e confiabilidade para sua operação.',
+        btn_text: 'Conheça nossas soluções',
+        link: '/servicos_e_produtos'
+    },
+    {
+        img: '/img/#',
+        title: 'Tecnologia para Piscicultura',
+        text: 'Materiais e soluções para instalações e painéis elétricos, com qualidade e confiabilidade para sua operação.',
+        btn_text: 'Conheça o OxilifeFish',
+        link: '/oxilifefish'
+    },
+    {
+        img: '/img/#',
+        title: 'Componentes Elétricos',
+        text: 'Materiais e soluções para instalações e painéis elétricos, com qualidade e confiabilidade para sua operação.',
+        btn_text: 'Ver produtos',
+        link: '/servicos_e_produtos'
+    }
+]
+
+const content_box_others = [ // JSON de blocos de textos da seção Sobre a Eletrotech
+    {
+        title: 'DESDE 2018',
+        text: 'Experiência e evolução',
+    },
+    {
+        title: 'ATENDIMENTO ESPECIAL',
+        text: 'Inclusive fora do horário comercial',
+    },
+    {
+        title: 'SOLUÇÕES COMPLETAS',
+        text: 'Elétrica, automação e manutenção',
+    }
+]
+
+const icon_contato = [ // JSON de blocos de textos da seção Sobre a Eletrotech
+    {
+        icon: 'fa-solid fa-headset fa-2xl',
+        text: 'Atendimento especializado',
+    },
+    {
+        icon: 'fa-solid fa-gear fa-2xl',
+        text: 'Soluções personalizadas',
+    },
+    {
+        icon: 'fa-solid fa-clock fa-2xl',
+        text: 'Resposta rápida',
+    }
+]%>
+
+
+
+
+
+    <main class="inicio-main">
+
+
+        
+        <section class="inicio-banner">
+
+            <div div class="banner-text-box">
+                <h1 class="banner-title">Eletrotech Marechal</h1>
+                <h2 class="banner-subtitle">Soluções Elétricas</h2>
+            </div>
+            <a href="/servicos-e-produtos"><button>Conheça as soluções <b>→</b></button></a>
+
+        </section>
+
+
+
+        <section class="inicio-oxilifefish">
+
+            <img class="oxilifefish-icon" src="img/#" alt="oxilifefish-icon" />
+            <hr />
+            <span>Mais controle. Mais segurança. Mais produtividade.</span>
+            <a href="/oxilifefish"><button>Conheça</button></a>
+
+        </section>
+
+
+
+        <section class="inicio-produtos">
+
+            <h1 class="produtos-title">Por que escolher a Eletrotech?</h1>
+
+            <div class="produtos-card-box">
+
+                <% cards.forEach(card => { %>
+
+                    <div class="produtos-card">
+
+                        <img class="produtos-card-img" src="<%= card.img %>" alt="<%= card.title %>" />
+
+                        <div class="produtos-card-text-box">
+                            <h2 class="produtos-card-title"><%= card.title %></h2>
+                            <p class="produtos-card-text"><%= card.text %></p>
+                        </div>
+
+                        <a class="produtos-card-button" href="<%= card.link %>"><%= card.btn_text %></a>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="inicio-sobre">
+
+            <h1 class="sobre-title">Sobre a Eletrotech</h1>
+
+            <div class="sobre-content-box">
+                
+                <div class="sobre-content-box-first">
+
+                    <h2 class="sobre-content-box-first-title">Soluções que evoluem com a sua necessidade.</h2>
+                    <p class="sobre-content-box-first-text">Desde 2018, atuamos com soluções elétricas, automação e manutenção, unindo qualidade, tecnologia e compromisso em cada projeto.</p>
+                    <a href="/sobre-nos"><button>Nossa História <b>→</b></button></a>
+
+                </div>
+
+                <% content_box_others.forEach(content_box => { %>
+
+                    <div class="sobre-content-box-others">
+
+                        <h3 class="sobre-content-box-others-title"><%= content_box_others.title %></h3>
+                        <p class="sobre-content-box-others-text"><%= content_box_others.text %></p>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+            
+        </section>
+
+        
+
+        <section class="inicio-contato">
+        
+            <div class="contato-content-box">
+            
+                <div class="contato-content-text-box">
+            
+                    <h1 class="contato-contato-title">Precisando de uma solução?</h1>
+                    <p class="contato-contato-text">Entre em contato conosco pelo whatsapp!</p>
+                
+                </div>
+                <div class="contato-content-btn-box">
+
+                    <a href="/contato"><button>Fale com a gente <b>→</b></button></a>
+
+                </div>
+
+                <hr>
+
+                <div class="contato-content-icon-box">
+
+                    <% icon_contato.forEach(icon => { %>
+
+                    <div class="contato-content-icon">
+
+                        <i class="<%= icon.icon %>"></i>
+                        <span class="contato-content-icon-text"><%= icon.text %></span>
+
+                    </div>
+
+                    <% }) %>
+                
+                </div>
+
+            </div>
+            
+        </section>
+
+
+        
+    </main>
+
+
+
     
 
-    <h1>Bem vindo ao site</h1>
-
-</body>
-</html>
+<%- include('../partials/footer.ejs') %>
+<%- include('../partials/scripts.ejs') %>
