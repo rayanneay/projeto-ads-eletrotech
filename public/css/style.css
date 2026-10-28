@@ -1,3 +1,18 @@
+:root {
+    /* Cores da marca */
+    --azul-profundo: #001336;
+    --azul-escuro: #062247;
+    --azul-royal: #10326f;
+    --azul-claro: #c6ddfb;
+    --laranja-escuro: #ef6d01;
+    --laranja: #f78321;
+    --branco: #ffffff;
+}
+
 * {
+  margin: 0;
+  padding: 0;
   font-family: "Inter", sans-serif;
 }/*# sourceMappingURL=style.css.map */
+
+ 

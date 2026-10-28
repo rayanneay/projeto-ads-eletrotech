@@ -2,16 +2,16 @@
 
     <nav class="header-navbar">
 
-        <a href="/"><img class="header-navbar-logo" src="img/#" alt="header-navbar-logo"></a>
-        
+        <a href="/"><img class="header-navbar-logo" src="/images/logo.png" alt="Eletrotech Marechal - Sistemas Elétricos"></a>
+
         <ul class="header-navbar-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/oxilifefish">OxilifeFish</a></li>
-            <li><a href="/servicos-e-produtos">Serviços e Produtos</a></li>
-            <li><a href="/sobre-nos">Sobre Nós</a></li>
-            <li><a href="/contato">Contato</a></li>
+            <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Início</a></li>
+            <li><a href="/oxilifefish" class="<%= path === '/oxilifefish' ? 'active' : '' %>">OxilifeFish</a></li>
+            <li><a href="/servicos-e-produtos" class="<%= path === '/servicos-e-produtos' ? 'active' : '' %>">Serviços e Produtos</a></li>
+            <li><a href="/sobre-nos" class="<%= path === '/sobre-nos' ? 'active' : '' %>">Sobre Nós</a></li>
+            <li><a href="/contato" class="<%= path === '/contato' ? 'active' : '' %>">Contato</a></li>
         </ul>
 
     </nav>
-    
+
 </header>
