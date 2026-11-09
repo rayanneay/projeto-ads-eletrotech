@@ -7,12 +7,50 @@
     --laranja-escuro: #ef6d01;
     --laranja: #f78321;
     --branco: #ffffff;
+    --espaco-lateral: clamp(20px, 4vw, 72px);
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }/*# sourceMappingURL=style.css.map */
 
- 
+ .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-laranja {
+    background: var(--laranja);
+    color: var(--branco);
+    border: 2px solid var(--laranja);
+}
+
+.btn-laranja:hover {
+    background: var(--laranja-escuro);
+    border-color: var(--laranja-escuro);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--laranja);
+    border: 2px solid var(--laranja);
+}
+
+.btn-outline:hover {
+    background: var(--laranja);
+    color: var(--branco);
+}
+
+.btn-grande {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+}

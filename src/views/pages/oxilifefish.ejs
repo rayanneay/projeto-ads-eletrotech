@@ -1,17 +1,86 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
 
+    <main class="oxi-main">
 
+        <!-- Hero -->
+        <section class="oxi-hero">
+            <div class="oxi-hero-texto">
+                <p>
+                    Sistema de monitoramento e controle de oxigênio para tanques de peixe.
+                    Acompanhe a leitura de oxigênio e temperatura e acione os aeradores
+                    pelo painel ou pelo celular, de onde você estiver.
+                </p>
+                <div class="oxi-downloads">
+                    <!-- TODO: trocar pelos arquivos/links reais -->
+                    <a class="btn btn-laranja" href="/downloads/manual-oxilifefish.pdf" download>Baixar manual</a>
+                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Baixar aplicativo</a>
+                </div>
+            </div>
+            <h1 class="oxi-hero-logo">
+                <img src="/images/oxilifefish.png" alt="OxilifeFish">
+            </h1>
+        </section>
 
+        <!-- O que é -->
+        <section class="oxi-card">
+            <div class="oxi-card-texto">
+                <h2>OxilifeFish: o que é?</h2>
+                <p>
+                    O OxilifeFish é um sistema de automação para aeradores em tanques e lagos de criação de peixes.
+                    Através do celular, o produtor pode monitorar e controlar os aeradores remotamente, de forma prática e eficiente.
+                </p>
+                <p>
+                    A solução facilita o manejo da piscicultura, permitindo acompanhar o funcionamento dos equipamentos à distância,
+                    proporcionando mais controle, praticidade e segurança para a criação de peixes.
+                </p>
+            </div>
+            <img class="oxi-card-img" src="/images/painel-oxilifefish.png"
+                 alt="Painel elétrico do OxilifeFish instalado em poste" loading="lazy">
+        </section>
 
+        <!-- Perguntas frequentes -->
+        <section class="oxi-card oxi-card-invertido">
+            <div class="oxi-card-texto">
+                <h2>Perguntas frequentes</h2>
+                <ol class="oxi-faq">
+                    <li>
+                        <h3>O que é o OxilifeFish?</h3>
+                        <p>O OxilifeFish é um sistema de automação desenvolvido para controlar e monitorar aeradores utilizados em tanques e lagos de criação de peixes.</p>
+                    </li>
+                    <li>
+                        <h3>Posso instalar o OxilifeFish em diferentes tipos de tanques?</h3>
+                        <p>O sistema pode ser utilizado em diferentes estruturas de criação, desde que a instalação seja compatível com as características dos aeradores e da propriedade.</p>
+                    </li>
+                    <li>
+                        <h3>O OxilifeFish ajuda a prevenir perdas?</h3>
+                        <p>Sim. O sistema permite monitorar e acionar os aeradores remotamente e automaticamente, ajudando a reduzir riscos e prevenir perdas na criação de peixes.</p>
+                    </li>
+                </ol>
+            </div>
+            <img class="oxi-card-img" src="/images/oximetro.png"
+                 alt="OxilifeFish em uso no tanque" loading="lazy">
+        </section>
 
-    <main class="oxilifefish-main">
-        <h1>Página OxilifeFish</h1>
+        <!-- Como funciona -->
+        <section class="oxi-card">
+            <div class="oxi-card-texto">
+                <h2>Como funciona</h2>
+                <p>
+                    O sistema monitora o oxigênio e a temperatura do tanque e divide os aeradores em quatro grupos.
+                    Cada grupo liga e desliga separadamente, conforme a necessidade e a programação que o produtor definir.
+                </p>
+                <p>
+                    Um mesmo painel controla até três sondas. Se o oxigênio ficar abaixo ou acima do limite,
+                    ou se a leitura da sonda falhar, o alarme dispara em poucos segundos.
+                    As leituras ficam gravadas em pendrive, para analisar a situação da lagoa em qualquer período.
+                </p>
+            </div>
+            <img class="oxi-card-img" src="/images/materiais1.jpg"
+                 alt="Sonda e painel do OxilifeFish" loading="lazy">
+        </section>
+
     </main>
-
-
-
-
 
 <%- include('../partials/footer.ejs') %>
 <%- include('../partials/scripts.ejs') %>

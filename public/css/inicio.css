@@ -1,1 +1,370 @@
-/*# sourceMappingURL=inicio.css.map */
+/* ================= BANNER / CARROSSEL ================= */
+.inicio-banner {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    background: var(--azul-profundo);
+}
+
+.banner-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px 64px 72px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.6s ease;
+}
+
+.banner-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* Escurece a foto para o texto ficar legível */
+.banner-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 19, 54, 0.65), rgba(0, 19, 54, 0.1));
+}
+
+.banner-slide > * {
+    position: relative;
+}
+
+.banner-title {
+    color: var(--laranja);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.banner-subtitle {
+    color: var(--branco);
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+/* Bolinhas */
+.banner-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.banner-dot {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 999px;
+    background: var(--laranja);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.banner-dot.active {
+    width: 28px;
+    opacity: 1;
+}
+
+.banner-seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 19, 54, 0.55);
+    color: var(--branco);
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.banner-seta:hover {
+    background: var(--laranja);
+}
+
+.banner-seta-anterior {
+    left: 12px;
+}
+
+.banner-seta-proxima {
+    right: 12px;
+}
+
+/* ================= OXILIFEFISH ================= */
+.inicio-oxilifefish {
+    background: linear-gradient(90deg, var(--azul-escuro), var(--azul-royal));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px var(--espaco-lateral);
+}
+
+.oxilifefish-icon {
+    height: 36px;
+    width: auto;
+}
+
+.inicio-oxilifefish hr {
+    width: 1px;
+    height: 36px;
+    margin: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.inicio-oxilifefish span {
+    color: var(--branco);
+    font-weight: 700;
+}
+
+/* ================= PRODUTOS (cards) ================= */
+.inicio-produtos {
+    background: var(--creme);
+    padding: 56px var(--espaco-lateral);
+}
+
+.produtos-title {
+    text-align: center;
+    color: var(--azul-royal);
+    font-size: 1.6rem;
+    margin-bottom: 36px;
+}
+
+.produtos-card-box {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.produtos-card {
+    background: var(--branco);
+    border-top: 4px solid var(--laranja);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 19, 54, 0.15);
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.produtos-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.produtos-card-text-box {
+    flex: 1;
+}
+
+.produtos-card-title {
+    color: var(--azul-royal);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.produtos-card-text {
+    color: var(--azul-escuro);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.produtos-card-button {
+    background: var(--laranja);
+    color: var(--branco);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.produtos-card-button:hover {
+    background: var(--laranja-escuro);
+}
+
+/* ================= SOBRE ================= */
+.inicio-sobre {
+    background: linear-gradient(90deg, var(--azul-profundo), var(--azul-royal));
+    color: var(--branco);
+    padding: 48px var(--espaco-lateral);
+}
+
+.sobre-title {
+    width: 100%;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--laranja);
+    font-size: 1.3rem;
+}
+
+.sobre-title::before {
+    content: "";
+    width: 48px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--laranja);
+}
+
+.sobre-content-box {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.sobre-content-box-first-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+.sobre-content-box-first-text {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.sobre-content-box-others-title {
+    color: var(--laranja);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.sobre-content-box-others-text {
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* ================= CONTATO ================= */
+.inicio-contato {
+    background: var(--creme);
+    padding: 40px var(--espaco-lateral);
+}
+
+.contato-content-box {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.contato-content-text-box {
+    flex: 1;
+}
+
+.contato-contato-title {
+    color: var(--azul-royal);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.contato-contato-text {
+    color: var(--azul-escuro);
+    font-weight: 600;
+}
+
+.contato-content-box hr {
+    width: 1px;
+    height: 90px;
+    margin: 0;
+    border: none;
+    background: var(--azul-escuro);
+}
+
+.contato-content-icon-box {
+    display: flex;
+    gap: 28px;
+}
+
+.contato-content-icon {
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--laranja);
+}
+
+.contato-content-icon i {
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+    height: auto;
+}
+
+.contato-content-icon-text {
+    color: var(--azul-escuro);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 900px) {
+    .inicio-banner {
+        height: 380px;
+    }
+
+    .banner-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .produtos-card-box {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-content-box {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-content-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contato-content-box hr {
+        width: 80%;
+        height: 1px;
+    }
+
+    .contato-content-icon-box {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

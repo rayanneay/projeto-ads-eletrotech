@@ -1,1 +1,148 @@
-/*# sourceMappingURL=oxilifefish.css.map */
+/* Página OxilifeFish (depende do CSS global: variáveis e .btn) */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.oxi-main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 64px;
+    background: var(--azul-profundo);
+    color: var(--branco);
+}
+
+/* Hero */
+.oxi-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px var(--espaco-lateral) 32px;
+    background: linear-gradient(180deg, var(--azul-royal) 0%, var(--azul-profundo) 100%);
+}
+
+.oxi-hero-logo {
+    order: -1;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.oxi-hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.oxi-hero-texto {
+    font-family: "Bebas Neue", "Inter", sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.oxi-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+    font-family: "Inter", sans-serif;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* Cards laranja */
+.oxi-card {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin: 0 var(--espaco-lateral);
+    overflow: hidden;
+    padding: 28px;
+    background: var(--laranja-escuro);
+    border-radius: 16px;
+    font-family: "Bebas Neue", "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.oxi-card h2 {
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.oxi-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.oxi-card p + p {
+    margin-top: 12px;
+}
+
+.oxi-card-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #f3f3f3;
+}
+
+/* FAQ */
+.oxi-faq {
+    padding-left: 22px;
+    font-size: 1.1rem;
+}
+
+.oxi-faq li + li {
+    margin-top: 20px;
+}
+
+.oxi-faq h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .oxi-hero {
+        flex-direction: row;
+        align-items: center;
+        gap: 64px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .oxi-hero-texto,
+    .oxi-hero-logo {
+        flex: 1;
+    }
+
+    .oxi-hero-logo {
+        order: 0;
+        margin: 0;
+        max-width: none;
+    }
+
+    .oxi-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
+        padding: 48px;
+    }
+
+    .oxi-card-invertido {
+        flex-direction: row-reverse;
+    }
+
+    .oxi-card-texto,
+    .oxi-card-img {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}

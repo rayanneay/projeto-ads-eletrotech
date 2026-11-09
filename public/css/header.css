@@ -6,9 +6,9 @@
 }
 
 .header-navbar {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 12px 24px;
+    padding: 12px var(--espaco-lateral);
     display: flex;
     align-items: center;
     justify-content: space-between;

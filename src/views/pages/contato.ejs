@@ -1,17 +1,97 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
 
-
-
-
-
     <main class="contato-main">
-        <h1>Página Contato</h1>
+
+        <section class="contato-intro">
+            <span class="contato-tag">Contato e localização</span>
+            <h1>Atendimento próximo, quando você precisar</h1>
+            <p>Há oito anos atendendo indústria, piscicultura e residências no oeste do Paraná.</p>
+        </section>
+
+        <section class="contato-cards" aria-label="Informações de atendimento">
+
+            <!-- Horários -->
+            <article class="contato-card">
+                <div class="contato-card-corpo">
+                    <div class="contato-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    </div>
+                    <h2>Horário de Atendimento</h2>
+                    <ul class="contato-horarios">
+                        <li><span>Segunda a sexta</span><strong>08:30 - 18:00</strong></li>
+                        <li><span>Sábado</span><strong>09:00 - 12:00</strong></li>
+                        <li><span>Domingo</span><strong>Fechado</strong></li>
+                    </ul>
+                </div>
+                <div class="contato-emergencia">
+                    <h3>Emergências?</h3>
+                    <p>Em casos de <strong>emergência</strong>, atendemos fora do horário comercial.</p>
+                </div>
+            </article>
+
+            <!-- Regiões atendidas -->
+            <article class="contato-card contato-card-escuro">
+                <div class="contato-card-corpo">
+                    <div class="contato-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>
+                    </div>
+                    <p class="contato-rotulo">Regiões atendidas</p>
+                    <h2>Todo Oeste do Paraná</h2>
+
+                    <h3>Marechal</h3>
+                    <p>Cândido Rondon - PR, onde fica a sede e nosso estoque.</p>
+
+                    <h3>Atendimento local</h3>
+                    <p>Toledo, Palotina, Guaíra, Quatro Pontes, Pato Bragado, Mercedes e vizinhas. Visita técnica no mesmo dia sempre que possível.</p>
+
+                    <div class="contato-projetos">
+                        <strong>Projetos</strong>
+                        <p>Também estamos disponíveis para projetos de aeração e automação para todo o <strong>Brasil (MS, MG, SP)</strong> e no Paraguai. Entre em contato conosco!</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Localização -->
+            <article class="contato-card">
+                <div class="contato-card-corpo">
+                    <div class="contato-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    </div>
+                    <h2>Onde Estamos</h2>
+                    <address>
+                        R. Darley Germano Bregolli, 513<br>
+                        Vila Gaúcha — Marechal Cândido Rondon - PR<br><br>
+                        CEP 85960-000
+                    </address>
+                    <a class="contato-mapa-link" target="_blank" rel="noopener"
+                       href="https://www.google.com/maps/search/?api=1&query=R.+Darley+Germano+Bregolli,+513,+Marechal+C%C3%A2ndido+Rondon,+PR">
+                        Ver no Google Maps
+                    </a>
+                </div>
+                <iframe class="contato-mapa" title="Mapa da Eletrotech Marechal" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=R.+Darley+Germano+Bregolli,+513,+Marechal+C%C3%A2ndido+Rondon,+PR&output=embed"></iframe>
+            </article>
+
+        </section>
+
+        <!-- Chamada WhatsApp -->
+        <section class="contato-cta">
+            <div class="contato-cta-interno">
+                <div>
+                    <h2>Precisa de um orçamento ou tem urgência?</h2>
+                    <p>Nosso atendimento é direto pelo WhatsApp — sem formulário, sem espera.</p>
+                </div>
+                <a class="btn btn-laranja btn-grande contato-whatsapp" target="_blank" rel="noopener"
+                   href="https://wa.me/5545999241306?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Eletrotech%20e%20gostaria%20de%20um%20or%C3%A7amento.">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7a2.7 2.7 0 001.8-1.3 2.2 2.200 0 00.2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+                    (45) 99924-1306
+                </a>
+            </div>
+        </section>
+
     </main>
-
-
-
-
 
 <%- include('../partials/footer.ejs') %>
 <%- include('../partials/scripts.ejs') %>

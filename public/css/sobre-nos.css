@@ -1,1 +1,275 @@
-/*# sourceMappingURL=sobre-nos.css.map */
+/* Página A Empresa (depende do CSS global: variáveis e .btn) */
+
+.empresa-main {
+    --creme: #f6f3ec;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding-bottom: 72px;
+    background: var(--creme);
+    color: var(--azul-profundo);
+}
+
+/* Títulos */
+.emp-titulo {
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.emp-centro {
+    text-align: center;
+}
+
+.emp-destaque {
+    position: relative;
+    color: var(--laranja);
+}
+
+.emp-destaque::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 3px;
+    background: var(--laranja);
+}
+
+.emp-laranja {
+    color: var(--laranja);
+}
+
+/* Quem somos */
+.emp-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 48px var(--espaco-lateral) 0;
+}
+
+.emp-hero-texto {
+    max-width: 760px;
+}
+
+.emp-hero-texto p {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.emp-hero-texto .btn {
+    margin-top: 24px;
+}
+
+.emp-raio {
+    display: none;
+    width: clamp(120px, 12vw, 200px);
+    flex-shrink: 0;
+    fill: var(--laranja);
+}
+
+/* O que nos move */
+.emp-valores {
+    margin: 0 var(--espaco-lateral);
+    padding: 28px 24px 32px;
+    background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-royal) 100%);
+    border-radius: 12px;
+    color: var(--branco);
+}
+
+.emp-valores-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.emp-valores-topo h2 {
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+}
+
+.emp-valores-topo img {
+    display: block;
+    height: 48px;
+    width: auto;
+}
+
+.emp-valores-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+    list-style: none;
+}
+
+.emp-valores-lista li {
+    text-align: center;
+}
+
+.emp-valores-lista svg {
+    width: 56px;
+    height: 56px;
+    fill: none;
+    stroke: var(--laranja);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.emp-valores-lista h3 {
+    margin: 8px 0 6px;
+    font-size: 1.15rem;
+}
+
+.emp-valores-lista p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--azul-claro);
+}
+
+/* Nossa história */
+.emp-historia {
+    padding: 0 var(--espaco-lateral);
+}
+
+.emp-historia-intro {
+    max-width: 640px;
+    margin: 20px auto 40px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Linha do tempo (mobile: linha à esquerda) */
+.emp-timeline {
+    position: relative;
+    list-style: none;
+}
+
+.emp-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12px;
+    width: 4px;
+    background: var(--azul-escuro);
+    transform: translateX(-50%);
+}
+
+.emp-evento {
+    position: relative;
+    display: flex;
+    padding-left: 40px;
+}
+
+.emp-evento + .emp-evento {
+    margin-top: 20px;
+}
+
+.emp-evento::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 22px;
+    height: 22px;
+    background: var(--branco);
+    border: 5px solid var(--azul-profundo);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.emp-evento-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 16px 18px;
+    background: linear-gradient(180deg, var(--azul-royal) 0%, var(--azul-profundo) 100%);
+    border-radius: 8px;
+    color: var(--branco);
+    box-shadow: 0 3px 8px rgba(0, 19, 54, 0.25);
+}
+
+.emp-evento-card svg {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--laranja);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.emp-evento-card time {
+    display: block;
+    color: var(--laranja);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.emp-evento-card h3 {
+    font-size: 1.1rem;
+}
+
+.emp-evento-card p {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--azul-claro);
+}
+
+/* Tablet e desktop */
+@media (min-width: 700px) {
+    .emp-raio {
+        display: block;
+    }
+
+    .emp-valores {
+        padding: 32px 40px 40px;
+    }
+
+    .emp-valores-lista {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+
+    .emp-valores-lista li {
+        padding: 0 20px;
+    }
+
+    .emp-valores-lista li + li {
+        border-left: 2px solid rgba(198, 221, 251, 0.35);
+    }
+
+    /* Linha do tempo alternada, com a linha no centro */
+    .emp-timeline::before {
+        left: 50%;
+    }
+
+    .emp-evento {
+        padding-left: 0;
+    }
+
+    .emp-evento::after {
+        left: 50%;
+    }
+
+    .emp-evento-card {
+        width: calc(50% - 40px);
+    }
+
+    .emp-evento:nth-child(even) {
+        justify-content: flex-end;
+    }
+
+    .emp-evento:nth-child(even) .emp-evento-card {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+}
