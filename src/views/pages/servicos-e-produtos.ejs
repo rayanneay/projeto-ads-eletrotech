@@ -1,17 +1,193 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
 
+<%
+// Dados dos Serviços Principais
+const servicosPrincipais = [
+    {
+        titulo: "Montagem de Painéis Elétricos e Automação",
+        descricao: "Montagem e adequação de painéis elétricos industriais e comerciais com componentes de alta qualidade, garantindo segurança operacional, conformidade normativa e alta eficiência.",
+        imagem: "/images/paineis.jpg", // Substituir pela imagem real
+        link: "/contato"
+    },
+    {
+        titulo: "Rebobinagem e Manutenção de Motores Elétricos e Bombas D’água",
+        descricao: "Serviço especializado em rebobinamento, manutenção preventiva e corretiva para motores elétricos monofásicos e trifásicos, além de bombas d'água industriais e agrícolas.",
+        imagem: "/images/motores.jpg",
+        link: "/contato"
+    }
+];
 
+// Dados de Outros Serviços
+const outrosServicos = [
+    {
+        titulo: "Automação Industrial",
+        descricao: "Desenvolvimento e integração de sistemas automatizados para otimizar linhas de produção, acionamentos e controle de processos.",
+        link: "/contato"
+    },
+    {
+        titulo: "Instalação de Equipamentos Liga/Desliga com Controle ou Celular",
+        descricao: "Soluções inteligentes de acionamento remoto via controle ou aplicativo móvel para sistemas de bombeamento, iluminação e motores.",
+        link: "/contato"
+    }
+];
 
+// Dados dos Produtos
+const produtos = [
+    {
+        titulo: "Oxímetro Manual",
+        descricao: "Aparelho para medição de oxigênio dissolvido, temperatura e saturação para uso em tanques de peixes.",
+        imagem: "/images/oximetro.jpg",
+        link: "/contato"
+    },
+    {
+        titulo: "Produtos Zagonel",
+        descricao: "Diversos produtos Zagonel, chuveiros e torneiras eletrônicas de diferentes modelos.",
+        imagem: "/images/zagonel.jpg",
+        link: "/contato"
+    },
+    {
+        titulo: "Materiais para Instalação de Painéis",
+        descricao: "Materiais diversos para painéis e instalações elétricas como contatores, relés térmicos, disjuntores e etc.",
+        imagem: "/images/materiais.jpg",
+        link: "/contato"
+    },
+    {
+        titulo: "Motores Elétricos Hércules",
+        descricao: "Motores elétricos Hércules novos de diferentes modelos, potência e rotações (RPM).",
+        imagem: "/images/hercules.jpg",
+        link: "/contato"
+    },
+    {
+        titulo: "Sistema de Alarme Para Piscicultura",
+        descricao: "Sistema com funcionamento sem fio e Wi-Fi com aplicativo para monitoramento no celular.",
+        imagem: "/images/alarme.jpg",
+        link: "/contato"
+    }
+];
 
+// Dados dos Diferenciais
+const diferenciais = [
+    { icone: "fa-sliders", texto: "Opções de até três sondas controladas através do mesmo painel." },
+    { icone: "fa-shield-halved", texto: "Traz uma grande segurança e comodidade para o produtor." },
+    { icone: "fa-bell", texto: "Alarme para nível de oxigênio máximo e mínimo, alertando falhas de leitura em poucos segundos." },
+    { icone: "fa-industry", texto: "Equipamentos usados na montagem do painel são de altíssima qualidade de nível industrial." },
+    { icone: "fa-mobile-screen-button", texto: "Acesso remoto pelo celular através de aplicativo dedicado." },
+    { icone: "fa-power-off", texto: "Opção para ligar e desligar os grupos manualmente no painel ou via aplicativo." },
+    { icone: "fa-chart-line", texto: "Histórico de leituras gravadas em pendrive para análise da lagoa em qualquer período." }
+];
+%>
 
-    <main class="servicos-e-produtos-main">
-        <h1>Página Serviços e Produtos</h1>
-    </main>
+<main class="servicos-e-produtos-main">
 
+    <!-- 1. Banner Principal -->
+    <section class="sp-banner">
+        <div class="sp-container">
+            <h1 class="sp-banner-title">Serviços e Produtos</h1>
+            <p class="sp-banner-subtitle">Conheça os nossos mais diversos serviços e produtos que oferecemos!</p>
+        </div>
+    </section>
 
+    <!-- 2. Principais Serviços Oferecidos -->
+    <section class="sp-principais">
+        <div class="sp-container">
+            <h2 class="sp-section-title dark">Principais Serviços Oferecidos</h2>
+            
+            <div class="sp-principais-list">
+                <% servicosPrincipais.forEach((servico, index) => { %>
+                    <div class="sp-card-principal <%= index % 2 === 1 ? 'reverse' : '' %>">
+                        <div class="sp-card-img-placeholder">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div class="sp-card-content">
+                            <h3 class="sp-card-title"><%= servico.titulo %></h3>
+                            <p class="sp-card-desc"><%= servico.descricao %></p>
+                            <a href="<%= servico.link %>" class="sp-card-btn">Estou interessado!</a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
 
+    <!-- 3. Outros Serviços -->
+    <section class="sp-outros">
+        <div class="sp-container">
+            <h2 class="sp-section-title light">Outros Serviços</h2>
+            
+            <div class="sp-outros-grid">
+                <% outrosServicos.forEach(servico => { %>
+                    <div class="sp-card-outro">
+                        <div class="sp-card-content">
+                            <h3 class="sp-card-title"><%= servico.titulo %></h3>
+                            <p class="sp-card-desc"><%= servico.descricao %></p>
+                            <a href="<%= servico.link %>" class="sp-card-btn">Estou interessado!</a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
 
+    <!-- 4. Seção de Produtos -->
+    <section class="sp-produtos">
+        <div class="sp-container">
+            <h2 class="sp-section-title dark">Produtos</h2>
+            
+            <div class="sp-produtos-grid">
+                <% produtos.forEach(produto => { %>
+                    <div class="sp-card-produto">
+                        <div class="sp-card-produto-img">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <div class="sp-card-content">
+                            <h3 class="sp-card-title"><%= produto.titulo %></h3>
+                            <p class="sp-card-desc"><%= produto.descricao %></p>
+                            <a href="<%= produto.link %>" class="sp-card-btn">Estou interessado!</a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Projeto de Sonda -->
+    <section class="sp-sonda">
+        <div class="sp-container">
+            <div class="sp-sonda-box">
+                <div class="sp-sonda-img">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                <div class="sp-sonda-content">
+                    <h2 class="sp-sonda-title">Projeto de Sonda</h2>
+                    <p class="sp-sonda-desc">
+                        Um sistema de monitoramento e controle do oxigênio no tanque de peixe, separado em quatro grupos de aeradores que ligam e desligam de acordo com a necessidade e programação desejada. Conta ainda com medição de temperatura para um manejo eficiente da sua produção.
+                    </p>
+                    <a href="/oxilifefish" class="sp-card-btn">Estou interessado!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Nossos Diferenciais -->
+    <section class="sp-diferenciais">
+        <div class="sp-container">
+            <h2 class="sp-section-title dark">Nossos Diferenciais</h2>
+            
+            <div class="sp-diferenciais-grid">
+                <% diferenciais.forEach(item => { %>
+                    <div class="sp-diferencial-item">
+                        <div class="sp-diferencial-icon">
+                            <i class="fa-solid <%= item.icone %>"></i>
+                        </div>
+                        <p class="sp-diferencial-text"><%= item.texto %></p>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 <%- include('../partials/footer.ejs') %>
-<%- include('../partials/scripts.ejs') %>   
+<%- include('../partials/scripts.ejs') %>

@@ -1,1 +1,423 @@
-/*# sourceMappingURL=servicos-e-produtos.css.map */
+/* ==========================================
+   Página: Serviços e Produtos (CSS Puro)
+   ========================================== */
+
+.servicos-e-produtos-main {
+    width: 100%;
+    background-color: var(--branco);
+}
+
+/* Container padrão de alinhamento */
+.sp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espaco-lateral);
+}
+
+/* Títulos das Seções */
+.sp-section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.sp-section-title.dark {
+    color: var(--azul-profundo);
+}
+
+.sp-section-title.light {
+    color: var(--branco);
+}
+
+/* ------------------------------------------
+   1. Banner Principal
+   ------------------------------------------ */
+.sp-banner {
+    background-color: var(--azul-profundo);
+    padding: 70px 0;
+    text-align: center;
+    color: var(--branco);
+}
+
+.sp-banner-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.sp-banner-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------
+   2. Principais Serviços Oferecidos
+   ------------------------------------------ */
+.sp-principais {
+    padding: 80px 0;
+    background-color: var(--branco);
+}
+
+.sp-principais-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sp-card-principal {
+    display: flex;
+    border: 2px solid var(--laranja);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--branco);
+    min-height: 320px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sp-card-principal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sp-card-principal.reverse {
+    flex-direction: row-reverse;
+}
+
+.sp-card-principal .sp-card-img-placeholder {
+    flex: 0 0 380px;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #999;
+}
+
+.sp-card-principal .sp-card-content {
+    flex: 1;
+    padding: 40px 48px 0 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sp-card-principal .sp-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--azul-profundo);
+    margin-bottom: 16px;
+}
+
+.sp-card-principal .sp-card-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+/* Botão padrão nos cards */
+.sp-card-btn {
+    display: block;
+    background-color: var(--laranja);
+    color: var(--branco);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px 24px;
+    margin: 0 -48px;
+    transition: background-color 0.2s ease;
+}
+
+.sp-card-btn:hover {
+    background-color: var(--laranja-escuro);
+}
+
+/* ------------------------------------------
+   3. Outros Serviços (Fundo Escuro)
+   ------------------------------------------ */
+.sp-outros {
+    background-color: var(--azul-profundo);
+    padding: 80px 0;
+}
+
+.sp-outros-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.sp-card-outro {
+    background-color: var(--branco);
+    border: 2px solid var(--laranja);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sp-card-outro .sp-card-content {
+    padding: 36px 36px 0 36px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.sp-card-outro .sp-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--azul-profundo);
+    margin-bottom: 14px;
+}
+
+.sp-card-outro .sp-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 24px;
+}
+
+.sp-card-outro .sp-card-btn {
+    margin: 0 -36px;
+}
+
+/* ------------------------------------------
+   4. Seção de Produtos (Grid)
+   ------------------------------------------ */
+.sp-produtos {
+    padding: 80px 0;
+    background-color: var(--branco);
+}
+
+.sp-produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.sp-card-produto {
+    background-color: var(--branco);
+    border: 2px solid var(--laranja);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.sp-card-produto:hover {
+    transform: translateY(-4px);
+}
+
+.sp-card-produto-img {
+    width: 100%;
+    height: 220px;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #999;
+}
+
+.sp-card-produto .sp-card-content {
+    padding: 24px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.sp-card-produto .sp-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--azul-profundo);
+    margin-bottom: 10px;
+}
+
+.sp-card-produto .sp-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.sp-card-produto .sp-card-btn {
+    margin: 0 -24px;
+    padding: 14px 20px;
+    font-size: 1rem;
+}
+
+/* ------------------------------------------
+   5. Projeto de Sonda
+   ------------------------------------------ */
+.sp-sonda {
+    background-color: var(--azul-profundo);
+    padding: 80px 0;
+    color: var(--branco);
+}
+
+.sp-sonda-box {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sp-sonda-img {
+    flex: 0 0 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--azul-claro);
+}
+
+.sp-sonda-content {
+    flex: 1;
+}
+
+.sp-sonda-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: var(--branco);
+}
+
+.sp-sonda-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 28px;
+}
+
+.sp-sonda .sp-card-btn {
+    display: inline-block;
+    border-radius: 8px;
+    margin: 0;
+    padding: 14px 36px;
+}
+
+/* ------------------------------------------
+   6. Nossos Diferenciais
+   ------------------------------------------ */
+.sp-diferenciais {
+    padding: 90px 0;
+    background-color: var(--branco);
+}
+
+.sp-diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 48px;
+}
+
+.sp-diferencial-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sp-diferencial-icon {
+    flex: 0 0 65px;
+    height: 65px;
+    background-color: var(--azul-profundo);
+    color: var(--laranja);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.sp-diferencial-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--azul-profundo);
+    font-weight: 500;
+}
+
+/* ==========================================
+   Responsividade (Tablet e Mobile)
+   ========================================== */
+@media (max-width: 992px) {
+    .sp-card-principal,
+    .sp-card-principal.reverse {
+        flex-direction: column;
+    }
+
+    .sp-card-principal .sp-card-img-placeholder {
+        flex: none;
+        height: 220px;
+        width: 100%;
+    }
+
+    .sp-card-principal .sp-card-content {
+        padding: 30px 24px 0 24px;
+    }
+
+    .sp-card-principal .sp-card-btn {
+        margin: 0 -24px;
+    }
+
+    .sp-outros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sp-sonda-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sp-sonda .sp-card-btn {
+        width: 100%;
+    }
+
+    .sp-diferenciais-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .sp-banner {
+        padding: 50px 0;
+    }
+
+    .sp-card-principal .sp-card-content,
+    .sp-card-outro .sp-card-content,
+    .sp-card-produto .sp-card-content {
+        padding: 24px 16px 0 16px;
+    }
+
+    .sp-card-btn,
+    .sp-card-outro .sp-card-btn,
+    .sp-card-produto .sp-card-btn {
+        margin: 0 -16px;
+        font-size: 1rem;
+    }
+
+    .sp-diferencial-icon {
+        flex: 0 0 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .sp-diferencial-text {
+        font-size: 0.95rem;
+    }
+}

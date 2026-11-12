@@ -168,6 +168,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(0, 19, 54, 0.15);
     width: 80%;
+    justify-self: center;   /* centraliza o card dentro da coluna */
     padding: 20px;
     display: flex;
     flex-direction: column;

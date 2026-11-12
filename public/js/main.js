@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.header-navbar');
+    const botaoMenu = document.querySelector('.header-menu-botao');
+
+    if (navbar && botaoMenu) {
+        function fecharMenu() {
+            navbar.classList.remove('aberto');
+            botaoMenu.setAttribute('aria-expanded', 'false');
+            botaoMenu.setAttribute('aria-label', 'Abrir menu');
+        }
+
+        botaoMenu.addEventListener('click', () => {
+            const aberto = navbar.classList.toggle('aberto');
+            botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+            botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+        });
+
+        document.addEventListener('keydown', (evento) => {
+            if (evento.key === 'Escape') fecharMenu(); 
+        });
+    }
+
     const banner = document.querySelector('.inicio-banner');
     if (!banner || banner.dataset.carousel) return;
 
