@@ -54,3 +54,44 @@
     padding: 14px 32px;
     font-size: 1.1rem;
 }
+
+/* Botão Flutuante do WhatsApp (Canto inferior direito) */
+.btn-whatsapp-flutuante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 80px;
+    height: 80px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-whatsapp-flutuante:hover {
+    background-color: #20ba5a;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    color: #ffffff;
+}
+
+.btn-whatsapp-flutuante:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .btn-whatsapp-flutuante {
+        bottom: 18px;
+        right: 18px;
+        width: 70px;
+        height: 70px;
+        font-size: 38px;
+    }
+}
