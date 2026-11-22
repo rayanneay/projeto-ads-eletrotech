@@ -275,8 +275,10 @@
 }
 
 .sp-sonda-img {
-    flex: 0 0 300px;
-    height: 300px;
+    max-height: 300px;
+    max-width: 300px;
+    width: 30vw;
+    height: 30vw;
     background-color: rgba(255, 255, 255, 0.08);
     border: 2px dashed rgba(255, 255, 255, 0.3);
     border-radius: 12px;
