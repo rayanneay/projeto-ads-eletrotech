@@ -4,7 +4,7 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import indexRoutes from './routes/index.js'
-// import adminRoutes from './routes/admin.js'
+import adminRoutes from './routes/admin.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express();
@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/", indexRoutes);
+app.use("/admin", adminRoutes);
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}`));

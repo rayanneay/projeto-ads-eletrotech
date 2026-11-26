@@ -13,7 +13,7 @@
         check: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12l3 3 5-6"/>'
     };
 
-    const valores = [
+    const valoresPadrao = [
         { icone: 'maleta', titulo: 'Qualidade', texto: 'Equipamentos de nível industrial e serviço feito com excelência.' },
         { icone: 'livro', titulo: 'Inovação', texto: 'Automação e controle pelo celular, como na sonda OxilifeFish.' },
         { icone: 'escudo', titulo: 'Segurança', texto: 'Alarmes e acionamentos confiáveis, para o produtor trabalhar tranquilo.' },
@@ -21,7 +21,7 @@
     ];
 
     // Linha do tempo: deixe "data" vazio ('') para não exibir a data.
-    const linhaDoTempo = [
+    const linhaDoTempoPadrao = [
         { data: 'Agosto de 2018', titulo: 'O Início', icone: 'casa',
           texto: 'Começamos com rebobinagem e manutenção de motores elétricos e bombas d\'água, além de serviços elétricos básicos.' },
         { data: '', titulo: 'Projetos elétricos', icone: 'documento',
@@ -35,6 +35,8 @@
         { data: '', titulo: 'Produtos', icone: 'carrinho',
           texto: 'Passamos a oferecer produtos Zagonel, motores Hércules e materiais para painéis e instalações elétricas.' }
     ];
+    const valores = sanityConfigured && companyValues.length ? companyValues : valoresPadrao;
+    const linhaDoTempo = sanityConfigured && historyEvents.length ? historyEvents : linhaDoTempoPadrao;
 %>
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header.ejs') %>
@@ -96,7 +98,7 @@
                             <div class="emp-evento-texto">
                                 <% if (ev.data) { %><time><%= ev.data %></time><% } %>
                                 <h3><%= ev.titulo %></h3>
-                                <p><%= ev.texto %></p>
+                                <p><%= ev.descricao || ev.texto %></p>
                             </div>
                         </article>
                     </li>

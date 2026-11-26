@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Painel administrativo | Eletrotech</title>
+    <link rel="icon" href="/images/eletrotech-icon.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <main class="admin-page">
+        <a class="admin-back" href="/">← Voltar ao site</a>
+        <section class="admin-panel" aria-labelledby="admin-title">
+            <img class="admin-logo" src="/images/logo.png" alt="Eletrotech Marechal">
+            <p class="admin-eyebrow">Área restrita de conteúdo</p>
+            <h1 id="admin-title">Painel administrativo</h1>
+            <p class="admin-intro">Gerencie o catálogo de produtos e as promoções exibidas na página inicial.</p>
+
+            <% if (!sanityConfigured) { %>
+                <p class="admin-notice" role="status">
+                    Configure <code>SANITY_PROJECT_ID</code> no arquivo <code>.env</code> e inicie o Studio com
+                    <code>npm run studio</code> para acessar o gerenciamento.
+                </p>
+            <% } %>
+
+            <div class="admin-content-types">
+                <article class="admin-content-card">
+                    <span class="admin-card-icon" aria-hidden="true">▦</span>
+                    <h2>Produtos</h2>
+                    <p>Adicione, edite, ordene ou remova produtos do catálogo. O site não exibe preços.</p>
+                </article>
+                <article class="admin-content-card">
+                    <span class="admin-card-icon" aria-hidden="true">✦</span>
+                    <h2>Promoções</h2>
+                    <p>Crie destaques para a página inicial e programe o período de publicação.</p>
+                </article>
+                <article class="admin-content-card">
+                    <span class="admin-card-icon" aria-hidden="true">⚙</span>
+                    <h2>Serviços</h2>
+                    <p>Gerencie os serviços principais e adicionais exibidos no catálogo.</p>
+                </article>
+                <article class="admin-content-card">
+                    <span class="admin-card-icon" aria-hidden="true">◷</span>
+                    <h2>História</h2>
+                    <p>Atualize a linha do tempo e os valores apresentados em Sobre nós.</p>
+                </article>
+            </div>
+
+            <a class="admin-open-studio" href="<%= studioUrl %>" target="_blank" rel="noopener noreferrer">
+                Abrir Sanity Studio
+                <span aria-hidden="true">↗</span>
+            </a>
+            <p class="admin-auth-note">O acesso e as permissões de edição são controlados pela sua conta Sanity.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -6,7 +6,7 @@
 -->
 
 <%
-const slides = [ // Slides do carrossel do banner
+const slidesPadrao = [ // Slides do carrossel do banner
     {
         img: '/images/materiais1.jpg',
         title: 'Eletrotech',
@@ -35,6 +35,17 @@ const slides = [ // Slides do carrossel do banner
         btn_text: 'Conheça o OxilifeFish →',
         link: '/oxilifefish'
     }   
+]
+
+const slides = [
+    ...slidesPadrao,
+    ...promotions.map(promotion => ({
+        img: promotion.imageUrl,
+        title: promotion.title,
+        subtitle: promotion.description,
+        btn_text: promotion.buttonText,
+        link: promotion.buttonUrl
+    }))
 ]
 
 const cards = [ // Cards da seção de serviços e produtos

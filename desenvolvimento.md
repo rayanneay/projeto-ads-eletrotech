@@ -1,3 +1,0 @@
-LOG DE DESENVOLVIMENTO DO SITE: Um arquivo criado para relatar e diarizar o processo de programação do site.
-
-(24 de out 21:54 - Lucas) Foi corretamente organizado as pastas e arquivos do projeto. Arquivos e pastas que referenciam ao Sanity, seja para criação de cliente ou modelagem de dados ainda não foram inclusas. A página src/views/pages/index.ejs está com o html completo mas sem estilo, as outras páginas possuem apenas place holder indicando qual página está o usuário, também sem estilo. FEITO COMMIT

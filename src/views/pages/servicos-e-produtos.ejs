@@ -3,7 +3,7 @@
 
 <%
 // Dados dos Serviços Principais
-const servicosPrincipais = [
+const servicosPrincipaisPadrao = [
     {
         titulo: "Montagem de Painéis Elétricos e Automação",
         descricao: "Montagem e adequação de painéis elétricos industriais e comerciais com componentes de alta qualidade, garantindo segurança operacional, conformidade normativa e alta eficiência.",
@@ -19,7 +19,7 @@ const servicosPrincipais = [
 ];
 
 // Dados de Outros Serviços
-const outrosServicos = [
+const outrosServicosPadrao = [
     {
         titulo: "Automação Industrial",
         descricao: "Desenvolvimento e integração de sistemas automatizados para otimizar linhas de produção, acionamentos e controle de processos.",
@@ -33,7 +33,7 @@ const outrosServicos = [
 ];
 
 // Dados dos Produtos
-const produtos = [
+const produtosPadrao = [
     {
         titulo: "Oxímetro Manual",
         descricao: "Aparelho para medição de oxigênio dissolvido, temperatura e saturação para uso em tanques de peixes.",
@@ -65,6 +65,15 @@ const produtos = [
         link: "/contato"
     }
 ];
+
+const produtos = sanityConfigured && products.length ? products : produtosPadrao;
+
+const servicosPrincipais = sanityConfigured && services.length
+    ? services.filter(servico => servico.categoria === 'principal')
+    : servicosPrincipaisPadrao;
+const outrosServicos = sanityConfigured && services.length
+    ? services.filter(servico => servico.categoria === 'outro')
+    : outrosServicosPadrao;
 
 // Dados dos Diferenciais
 const diferenciais = [
@@ -138,7 +147,11 @@ const diferenciais = [
                 <% produtos.forEach(produto => { %>
                     <div class="sp-card-produto">
                         <div class="sp-card-produto-img">
-                            <i class="fa-solid fa-box-open"></i>
+                            <% if (produto.imagem) { %>
+                                <img src="<%= produto.imagem %>" alt="<%= produto.titulo %>">
+                            <% } else { %>
+                                <i class="fa-solid fa-box-open"></i>
+                            <% } %>
                         </div>
                         <div class="sp-card-content">
                             <h3 class="sp-card-title"><%= produto.titulo %></h3>
